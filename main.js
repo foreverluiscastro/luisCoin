@@ -60,8 +60,9 @@ console.log('Is blockchain valid?' + luisCoin.isChainValid());
 // console.log(JSON.stringify(luisCoin, null, 4));
 
 luisCoin.chain[1].data = { amount: 100 };
-luisCoin.chain[1].hash = luisCoin.chain[1].calculateHash();
-
 // After tampering with the blockchain, the chain is no longer valid.
+
+luisCoin.chain[1].hash = luisCoin.chain[1].calculateHash();
+// The block is still invalid because the relationship with previous blocks has been broken.
 
 console.log('Is blockchain valid?' + luisCoin.isChainValid());
